@@ -1,15 +1,15 @@
-import {MetricsPanelCtrl} from 'app/plugins/sdk';
 import _ from 'lodash';
-import kbn from 'app/core/utils/kbn';
-import TimeSeries from 'app/core/time_series';
+import ace from 'brace';
+import 'brace/mode/javascript';
+import 'brace/mode/svg';
+import 'brace/ext/language_tools';
+import 'brace/theme/tomorrow_night_bright';
+import 'jquery.flot.pie';
+import {MetricsPanelCtrl} from 'grafana/app/plugins/sdk';
+import kbn from 'grafana/app/core/utils/kbn';
+import TimeSeries from 'grafana/app/core/time_series';
 import rendering from './rendering';
 import {SVGDemos} from './demos';
-import {Snap} from './node_modules/snapsvg/dist/snap.svg-min.js';
-import ace from './node_modules/brace/index.js';
-import './node_modules/brace/ext/language_tools.js';
-import './node_modules/brace/theme/tomorrow_night_bright.js';
-import './node_modules/brace/mode/javascript.js';
-import './node_modules/brace/mode/svg.js';
 
 
 class GrafanaJSCompleter {
@@ -87,7 +87,7 @@ class GrafanaJSCompleter {
 
 
 export class SVGCtrl extends MetricsPanelCtrl {
-
+    /** @ngInject */
     constructor($scope, $injector, $rootScope) {
         super($scope, $injector);
         this.$rootScope = $rootScope;
@@ -121,7 +121,7 @@ export class SVGCtrl extends MetricsPanelCtrl {
         };
 
         _.defaults(this.panel, panelDefaults);
-
+        console.log({events: this.events});
         this.events.on('render', this.onRender.bind(this));
         this.events.on('refresh', this.onRender.bind(this));
         this.events.on('data-received', this.onDataReceived.bind(this));

@@ -21,6 +21,6 @@
     "dependencies": {
         "brace": "^0.11.1",
         "lodash": "^4.17.21",
-        "snapsvg": "^0.5.1"
+        "snapsvg-cjs": "^0.0.6"
     }
 }

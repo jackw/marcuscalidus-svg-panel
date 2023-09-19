@@ -1,8 +1,5 @@
 import _ from 'lodash';
-import $ from 'jquery';
-import 'jquery.flot';
-import 'jquery.flot.pie';
-import * as SnapLib  from './node_modules/snapsvg/dist/snap.svg-min.js';
+import * as SnapLib from 'snapsvg-cjs';
 
 export default function link(scope, elem, attrs, ctrl) {
   var panel;
@@ -44,9 +41,9 @@ export default function link(scope, elem, attrs, ctrl) {
 
     let childSVG = Snap.parse(panel.svg_data);
     parentSVG.node.append(childSVG.node);
-  } 
+  }
 
-  function resizePlotCanvas() {     
+  function resizePlotCanvas() {
     var plotCss = {
       margin: 'auto',
       position: 'relative',
@@ -54,29 +51,29 @@ export default function link(scope, elem, attrs, ctrl) {
     };
     plotCanvas.css(plotCss);
   }
-   
+
   function render() {
     panel = ctrl.panel;
 
-    if (setElementHeight()) { 
+    if (setElementHeight()) {
       if (svgelem) {
       	svgnode = svgelem;
-      	
+
       	if (svgnode.getAttribute("name") == 'isInitial') {
       	  svgnode.removeAttribute("name");
       	  ctrl.initialized = 0;
         }
-      
+
       	resizePlotCanvas();
-            
+
       	if (!ctrl.initialized) {
-        	addSVG();    
+        	addSVG();
         	panel.doInit(ctrl, svgnode);
         	ctrl.initialized = 1;
       	}
-        
-      	panel.handleMetric(ctrl, svgnode); 
-      
+
+      	panel.handleMetric(ctrl, svgnode);
+
       	svgnode = null;
       }
    	  else {

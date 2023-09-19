@@ -1,7 +1,4 @@
 import './polyfills.js';
-import _ from 'lodash';
-import { SVGCtrl } from './svg_ctrl';
+import { SVGCtrl } from './svg_ctrl.js';
 
-export {
-    SVGCtrl as PanelCtrl
-};
+export { SVGCtrl as PanelCtrl };
