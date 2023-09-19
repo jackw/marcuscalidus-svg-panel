@@ -121,7 +121,6 @@ export class SVGCtrl extends MetricsPanelCtrl {
         };
 
         _.defaults(this.panel, panelDefaults);
-        console.log({events: this.events});
         this.events.on('render', this.onRender.bind(this));
         this.events.on('refresh', this.onRender.bind(this));
         this.events.on('data-received', this.onDataReceived.bind(this));
