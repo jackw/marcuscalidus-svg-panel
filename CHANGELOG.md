@@ -1,3 +1,6 @@
+# 0.4.0
+- migrated to grafana/toolkit for AMD build and Grafana 10.2.x compatibility
+
 # 0.3.4
 - fixed rendering of SVG that were not able to resize to small heights
 
@@ -9,8 +12,8 @@
 
 # 0.3.0
 - Implemented support for data in docs type. (e.g. Elasticsearch Raw Document) Thanks to Zoltán Szabó (https://github.com/zoell)
-- The data passed to the panel is now stored in the `ctrl.data` property. The alias property `ctrl.series` should not be used anymore and is to be regarded deprecated. 
- 
+- The data passed to the panel is now stored in the `ctrl.data` property. The alias property `ctrl.series` should not be used anymore and is to be regarded deprecated.
+
  # 0.2.0
 - Implemented support for data in table format. Thanks to Lauri Saurus (https://github.com/saurla)
 
@@ -23,7 +26,7 @@
 - BREAKING: plugin was renamed marcuscalidus-svg-panel in line with http://docs.grafana.org/plugins/developing/code-styleguide/
 
  ### Steps to update from older version
- 
+
  * export dashboard containing grafana-svg-panel as json
  * install marcuscalidus-svg-panel plugin. Either by cloning it into separate folder (=safe method) or by pulling it into the current version.
  * replace all occurrences of grafana-svg-panel with marcuscalidus-svg-panel in the json file.
