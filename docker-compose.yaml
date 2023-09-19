@@ -1,0 +1,13 @@
+version: '3.0'
+
+services:
+  grafana:
+    container_name: 'marcuscalidus-svg-panel'
+    image: grafana/grafana:8.0.0
+    environment:
+      GF_PLUGINS_ALLOW_LOADING_UNSIGNED_PLUGINS: marcuscalidus-svg-panel
+    ports:
+      - 3000:3000/tcp
+    volumes:
+      - ./dist:/var/lib/grafana/plugins/marcuscalidus-svg-panel
+      - ./provisioning:/etc/grafana/provisioning
