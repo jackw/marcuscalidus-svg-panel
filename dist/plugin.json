@@ -27,10 +27,9 @@
             { "name": "SVG data", "path": "img/svgData.png" },
             { "name": "included Demos", "path": "img/demoButtons.png" }
         ],
-        "version": "0.3.3",
-        "updated": "2019-26-11"
+        "version": "0.4.0",
+        "updated": "2023-09-19"
     },
-
     "dependencies": {
         "grafanaVersion": "3.x.x",
         "plugins": []
